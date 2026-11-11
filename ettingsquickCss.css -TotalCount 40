@@ -1,0 +1,51 @@
+[1mdiff --git a/src/components/settings/AddonCard.tsx b/src/components/settings/AddonCard.tsx[m
+[1mindex ac1a9447..22413da4 100644[m
+[1m--- a/src/components/settings/AddonCard.tsx[m
+[1m+++ b/src/components/settings/AddonCard.tsx[m
+[36m@@ -18,12 +18,10 @@[m
+ [m
+ import "./AddonCard.css";[m
+ [m
+[31m-import { Paragraph } from "@components/Paragraph";[m
+ import { AddonBadge } from "@components/settings/PluginBadge";[m
+ import { Switch } from "@components/Switch";[m
+[31m-import { Text } from "@components/Text";[m
+ import { classNameFactory } from "@utils/css";[m
+[31m-import { useRef } from "@webpack/common";[m
+[32m+[m[32mimport { Text, useRef } from "@webpack/common";[m
+ import type { MouseEventHandler, ReactNode } from "react";[m
+ [m
+ const cl = classNameFactory("vc-addon-");[m
+[36m@@ -55,7 +53,7 @@[m [mexport function AddonCard({ disabled, isNew, name, infoButton, footer, author, e[m
+         >[m
+             <div className={cl("header")}>[m
+                 <div className={cl("name-author")}>[m
+[31m-                    <Text weight="bold" className={cl("name")}>[m
+[32m+[m[32m                    <Text variant="text-md/bold" className={cl("name")}>[m
+                         <div ref={titleContainerRef} className={cl("title-container")}>[m
+                             <div[m
+                                 ref={titleRef}[m
+[36m@@ -75,9 +73,9 @@[m [mexport function AddonCard({ disabled, isNew, name, infoButton, footer, author, e[m
+                     </Text>[m
+ [m
+                     {!!author && ([m
+[31m-                        <Paragraph size="md" className={cl("author")}>[m
+[32m+[m[32m                        <Text variant="text-md/normal" className={cl("author")}>[m
+                             {author}[m
+[31m-                        </Paragraph>[m
+[32m+[m[32m                        </Text>[m
+                     )}[m
+                 </div>[m
+ [m
+[36m@@ -90,9 +88,9 @@[m [mexport function AddonCard({ disabled, isNew, name, infoButton, footer, author, e[m
+                 />[m
+             </div>[m
+ [m
+[31m-            <Paragraph className={cl("note")}>{description}</Paragraph>[m
+[32m+[m[32m            <Text className={cl("note")} variant="text-sm/normal">{description}</Text>[m
+ [m
+             {footer}[m
+[31m-        </div >[m
+[32m+[m[32m        </div>[m
+     );[m
+ }[m
